@@ -1,0 +1,106 @@
+Part-1 : Python Basics for Developers
+
+1️⃣ Variables
+
+C#:
+
+int age = 30;
+string name = "Test";
+
+Python:
+
+age = 30
+
+name = "Test"
+
+👉 No type declaration. Dynamic typing.
+
+2️⃣ Lists (Like C# List<T>)
+
+Python:
+
+numbers = [1, 2, 3, 4]
+names = ["UT", "AI", "Engineer"]
+
+Access:
+
+print(numbers[0])
+
+Loop:
+
+for num in numbers:
+print(num)
+
+3️⃣ Dictionaries (Like C# Dictionary<TKey, TValue>)
+
+Python:
+
+user = {
+
+    "name": "UT",
+
+    "age": 30
+
+}
+
+print(user["name"])
+
+4️⃣ Functions
+
+C#:
+
+string Greet(string name)
+
+{
+
+    return $"Hello {name}";
+
+}
+
+Python:
+
+def greet(name):
+
+    return f"Hello {name}"
+
+print(greet("Test"))
+
+5️⃣ If-Else
+
+Python:
+
+if age > 18:
+
+    print("Adult")
+
+else:
+
+    print("Minor")
+
+Indentation = Important in Python ⚠
+
+
+
+Part-2 : Virtual Environment + Packages
+
+1️⃣ Create Virtual Environment
+
+Open terminal:
+
+python -m venv venv
+
+Activate:
+
+Windows:
+
+venv\Scripts\activate
+
+2️⃣ Install Packages
+
+pip install numpy pandas matplotlib scikit-learn jupyter
+
+These are core ML libraries.
+
+3️⃣ Start Jupyter Notebook
+
+jupyter notebook
