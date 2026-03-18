@@ -111,7 +111,13 @@ Step 2: Read CSV using Pandas
 
 import pandas as pd
 
-df = pd.read_csv("your_file_name.csv")
+df = pd.read_csv(
+    "Test.csv",
+    encoding="latin1",
+    sep=None,
+    engine="python",
+    on_bad_lines="skip"
+)
 
 print(df.head())
 
