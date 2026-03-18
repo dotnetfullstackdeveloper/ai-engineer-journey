@@ -1,1 +1,99 @@
+Part-1
 
+Example 1 – Create Array
+In Colab run:
+
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40, 50])
+
+print(numbers)
+
+
+Output:
+
+[10 20 30 40 50]
+
+
+Example 2 – Basic Operations
+
+Run:
+
+print("Mean:", np.mean(numbers))
+print("Max:", np.max(numbers))
+print("Min:", np.min(numbers))
+print("Sum:", np.sum(numbers))
+
+Example 3 – Vector Operations
+
+Run:
+
+a = np.array([1,2,3])
+
+b = np.array([4,5,6])
+
+print(a + b)
+
+print(a * b)
+
+
+Output:
+
+[5 7 9]
+[4 10 18]
+
+Part-2
+
+Step 1 – Import Pandas
+
+import pandas as pd
+
+Step 2 – Create DataFrame
+
+data = {
+"Name": ["Alice", "Bob", "Charlie"],
+"Age": [25, 30, 35],
+"Salary": [50000, 60000, 70000]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+Output:
+
+Name	Age	Salary
+Alice	25	50000
+Bob	30	60000
+Charlie	35	70000
+
+Step 3 – Basic Data Exploration
+
+Run:
+
+print(df.head())
+
+Shows first rows.
+
+
+Step 4 – Get Column
+
+print(df["Salary"])
+
+
+Step 5 – Calculate Statistics
+
+print(df["Salary"].mean())
+
+Part-3
+
+high_salary = df[df["Salary"] > 55000]
+
+print(high_salary)
+
+Part-4
+df = pd.read_csv("data.csv")
+
+df.head()
+df.info()
+df.describe()
