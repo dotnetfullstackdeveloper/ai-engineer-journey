@@ -102,6 +102,19 @@ Part 4 – Load CSV Dataset
 
 Method 1:
 
+Step 1: Run this in Colab
+
+from google.colab import files
+uploaded = files.upload()
+
+Step 2: Read CSV using Pandas
+
+import pandas as pd
+
+df = pd.read_csv("your_file_name.csv")
+
+print(df.head())
+
 🧠 Example
 
 If your file is: Test.csv then
