@@ -1,3 +1,7 @@
+First Import below library :
+
+import matplotlib.pyplot as plt
+
 🚀 Part 2 – Line Chart
 
 Example:
