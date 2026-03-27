@@ -54,14 +54,17 @@ import matplotlib.pyplot as plt
 df = pd.read_csv("Test.csv")
 
 # Bar chart
-plt.bar(df["Name"], df["Marks"])
-plt.title("Marks by Student")
+names = (df["Name"])
+Salary = (df["Salary"])
+
+plt.bar(names, Salary)
+plt.title("Employee Data")
 
 plt.show()
 
-Histogram:
+#Histogram:
 
-plt.hist(df["Marks"])
-plt.title("Marks Distribution")
+plt.hist(df["Salary"])
+plt.title("Salary Distribution")
 
 plt.show()
