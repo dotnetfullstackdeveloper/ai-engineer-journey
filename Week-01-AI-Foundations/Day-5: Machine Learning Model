@@ -24,7 +24,8 @@ model.fit(X, y)
 
 Part 5 – Predict
 
-prediction = model.predict([[6]])
+new_data = pd.DataFrame({"Hours": [6]})
+prediction = model.predict(new_data)
 print("Predicted Marks:", prediction)
 
 Part 6 – Visualize Model
