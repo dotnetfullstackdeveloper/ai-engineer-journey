@@ -24,7 +24,7 @@ model.fit(X, y)
 
 Part 5 – Predict
 
-new_data = pd.DataFrame({"Hours": [6]})
+new_data = pd.DataFrame({"Hours": [6]}) #Used DataFrame while predicting - to vaoid warning
 prediction = model.predict(new_data)
 print("Predicted Marks:", prediction)
 
