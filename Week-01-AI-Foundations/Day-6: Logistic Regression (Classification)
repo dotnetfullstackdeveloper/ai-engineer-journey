@@ -1,0 +1,37 @@
+Part 1:
+
+import pandas as pd
+from sklearn.linear_model import LogisticRegression
+
+Part 2:
+
+data = {
+"Hours": [1, 2, 3, 4, 5, 6],
+"Pass": [0, 0, 0, 1, 1, 1]
+}
+
+df = pd.DataFrame(data)
+
+Part 3:
+
+X = df[["Hours"]]
+y = df["Pass"]
+
+Part 4:
+
+model = LogisticRegression()
+model.fit(X, y)
+
+Part 5:
+
+new_data = pd.DataFrame({"Hours": [3.5]})
+
+prediction = model.predict(new_data)
+print("Prediction:", prediction)
+
+Part 6:
+
+prob = model.predict_proba(new_data)
+print(prob)
+
+
