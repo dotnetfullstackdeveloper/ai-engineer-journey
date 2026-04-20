@@ -1,1 +1,39 @@
 
+Part 1:
+
+from sklearn.tree import DecisionTreeClassifier
+import pandas as pd
+
+Part 2:
+
+data = {
+"Hours": [1,2,3,4,5,6,7],
+"Pass": [0,0,0,0,1,1,1]
+}
+
+df = pd.DataFrame(data)
+
+Part 3:
+
+X = df[["Hours"]]
+y = df["Pass"]
+
+Part 4:
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+Part 5:
+
+new_data = pd.DataFrame({"Hours": [3.5]})
+prediction = model.predict(new_data)
+print("Prediction:", prediction)
+
+Part 6:
+
+from sklearn.tree import plot_tree
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(6,4))
+plot_tree(model, feature_names=["Hours"], class_names=["Fail","Pass"], filled=True)
+plt.show()
