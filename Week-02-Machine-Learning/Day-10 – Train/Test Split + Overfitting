@@ -1,0 +1,53 @@
+Part 1:
+
+from sklearn.model_selection import train_test_split
+
+Part 2:
+
+import pandas as pd
+
+data = {
+"Hours": [1,2,3,4,5,6,7,8],
+"Pass": [0,0,0,0,1,1,1,1]
+}
+
+df = pd.DataFrame(data)
+
+X = df[["Hours"]]
+y = df["Pass"]
+
+Part 3:
+
+X_train, X_test, y_train, y_test = train_test_split(
+X,
+y,
+test_size=0.2,
+random_state=42
+)
+
+Part 4:
+
+from sklearn.linear_model import LogisticRegression
+model = LogisticRegression()
+model.fit(X_train, y_train)
+
+Part 5:
+
+y_pred = model.predict(X_test)
+print(y_pred)
+
+Part 6:
+
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+Part 7:
+
+train_acc = model.score(X_train, y_train)
+test_acc = model.score(X_test, y_test)
+
+print("Train Accuracy:", train_acc)
+print("Test Accuracy:", test_acc)
+
+
