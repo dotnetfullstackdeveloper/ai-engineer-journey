@@ -1,0 +1,54 @@
+Part 1:
+
+import pandas as pd
+import numpy as np
+
+data = {
+"Name": ["A", "B", "C", "D", "D"],
+"Age": [20, 21, np.nan, 23, 23],
+"Marks": [70, 85, 90, np.nan, np.nan]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+Part 2: 
+
+print(df.isnull())
+Count missing values:
+print(df.isnull().sum())
+
+Part 3:
+
+Option 1:
+
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+
+Option 2:
+
+df = df.dropna()
+
+Part 4:
+
+df = df.drop_duplicates()
+
+Part 5:
+
+df["Pass"] = df["Marks"] > 75
+print(df)
+
+Part 6:
+
+df["Pass"] = df["Pass"].astype(int)
+print(df)
+
+Part 7:
+
+df["Performance"] = np.where(
+df["Marks"] > 80,
+"Good",
+"Average"
+)
+print(df)
