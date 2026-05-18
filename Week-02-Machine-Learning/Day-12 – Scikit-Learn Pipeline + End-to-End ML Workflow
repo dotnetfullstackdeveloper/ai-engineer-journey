@@ -1,0 +1,65 @@
+Part 1: 
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.impute import SimpleImputer
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+Part 2:
+
+data = {
+"Hours": [1,2,3,4,5,6,7,8],
+"Marks": [40,45,50,55,70,80,90,95],
+"Pass": [0,0,0,0,1,1,1,1]
+}
+
+df = pd.DataFrame(data)
+
+Part 3:
+
+X = df[["Hours", "Marks"]]
+y = df["Pass"]
+
+Part 4:
+
+X_train, X_test, y_train, y_test = train_test_split(
+X,
+y,
+test_size=0.2,
+random_state=42
+)
+
+Part 5:
+
+pipeline = Pipeline([
+("imputer", SimpleImputer(strategy="mean")),
+("scaler", StandardScaler()),
+("model", LogisticRegression())
+])
+
+Part 6:
+
+pipeline.fit(X_train, y_train)
+
+Part 7:
+
+y_pred = pipeline.predict(X_test)
+print(y_pred)
+
+Part 8:
+
+accuracy = accuracy_score(y_test, y_pred)
+print("Accuracy:", accuracy)
+
+Part 9:
+
+new_data = pd.DataFrame({
+"Hours": [6],
+"Marks": [85]
+})
+
+prediction = pipeline.predict(new_data)
+print("Prediction:", prediction)
