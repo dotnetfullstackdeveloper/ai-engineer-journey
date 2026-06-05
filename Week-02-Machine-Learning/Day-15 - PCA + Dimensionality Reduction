@@ -1,0 +1,54 @@
+Part 1:
+
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+
+Part 2:
+
+data = {
+"Hours": [1,2,3,4,5,6,7,8],
+"Marks": [40,45,50,55,70,80,90,95],
+"Attendance": [60,65,70,75,80,85,90,95]
+}
+
+df = pd.DataFrame(data)
+print(df.head())
+
+Part 3:
+
+scaler = StandardScaler()
+scaled_data = scaler.fit_transform(df)
+
+Part 4:
+
+pca = PCA(n_components=2)
+reduced_data = pca.fit_transform(scaled_data)
+print(reduced_data)
+
+Part 5:
+
+pca_df = pd.DataFrame(
+reduced_data,
+columns=["PC1", "PC2"]
+)
+print(pca_df.head())
+
+Part 6:
+
+plt.scatter(
+pca_df["PC1"],
+pca_df["PC2"]
+)
+plt.xlabel("Principal Component 1")
+plt.ylabel("Principal Component 2")
+plt.title("PCA Visualization")
+plt.show()
+
+Part 7:
+
+print(pca.explained_variance_ratio_)
+
+
+
